@@ -639,6 +639,10 @@ nav .fa-solid{
         transform: translateY(20px);
         transition: opacity 0.5s, transform 3.5s;
     }
+
+    #floating-image{
+        opacity: 0;
+    }
     
     #about.show {
         opacity: 1;
