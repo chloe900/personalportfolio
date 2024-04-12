@@ -498,7 +498,7 @@ nav .fa-solid{
     #header{
         background-image: url(images/me2_resized\ \(2\).png);
         background-position: right;
-       background-size: 400px;
+        background-size: 400px;
         background-repeat: no-repeat;
     }
 
@@ -552,16 +552,7 @@ nav .fa-solid{
         flex-basis: 100%;
     }
 
-    #floating-image{
-        width: 100px;
-        position: 2px;
-        opacity: 0px;
-    }
 
-    #floating-image.show{
-        opacity: 0;
-        transform: translateX(0);
-    }
     .col2{
         margin-top: -100px;
     }
@@ -652,6 +643,175 @@ nav .fa-solid{
     #about.show {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    .interestgroup{
+        height: 300px;
+    }
+    
+    .work-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+        color: palevioletred;
+    }
+    
+    
+    .work {
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .work img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: block;
+        opacity: 0; /* Initially set opacity to 0 */
+        transform: translateX(-100%); /* Initially move images outside the viewport */
+        transition: transform 2.8s, opacity 0.8s;
+    }
+    
+    .work.animate img {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color:hotpink;
+      }
+    
+      .work .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+    
+    
+    .work:hover .overlay{
+        opacity: 1;
+        
+    }
+    
+    .work .overlay .layer {
+        color: white;
+    }
+    
+    /* Adjust the timing and easing function as needed */
+    .work:hover img {
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+    
+    .layer{
+        text-align: center;
+        color: #fff;
+        
+    }
+    
+    .layer a{
+        margin-top: 20px;
+        color: white;
+        width:60px;
+        height: 60px;
+    }
+    
+    .btn{
+        display: block;
+        margin: 50px auto;
+        width: fit-content;
+        border: 1px solid pink;
+        padding: 14px 60px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: palevioletred;
+        transition: background 0.5s;
+    }
+    
+    
+    .btn:hover{
+        background: pink;
+    }
+    
+    .contact-left{
+        flex-basis: 60%;
+        color: palevioletred;
+        margin-left: 200px;
+        margin-top: -52px;
+        text-align: center;
+        float: left;
+    }
+    
+    .contact-right{
+        flex-basis: 60%;
+        right:20px;
+        float: right;
+        
+    }
+    
+    .contact-left p{
+        flex-basis: 35%;
+    }
+    
+    .contact-left p i{
+        color: palevioletred;
+        align-items: center;
+        font-size: 25px;
+    }
+    
+    .social-icons{
+        margin-top: 30px;
+    }
+    
+    .social-icons a{
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: palevioletred;
+        display: inline-block;
+        transition: transform 0.5s;
+    }
+    
+    .social-icons a:hover{
+        color: white;
+        transform: translateY(-5px);
+    
+    }
+    
+    .btn.btn2{
+        display: inline-block;
+        background: pink;
+        align-items: center;
+        margin-left: 60px;
+        padding: 14px 60px;
+        
+    }
+    
+    #download-button{
+        display: flex;
+        justify-content: center;
+        margin-left: 120px;
+        padding: 14px 60px;
+        font-size: 18px;
     }
 }
 
