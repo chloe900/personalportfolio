@@ -89,7 +89,7 @@ function openmenu(){
 function closemenu(){
     sidemenu.style.right = "-200px"
 }
-
+//change to firebase database.
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwnm7X8aPXJ4ctOD_kzFe-YmeJh4ZNzTWTUBixstXRlmUnzYBIgr_BiGjwA9Kc_36TT/exec'
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById("msg")

@@ -382,7 +382,7 @@ nav ul li a:hover::after {
 }
 
 .contact-left{
-    flex-basis: 60%;
+    flex-basis: 10%;
     color: palevioletred;
     margin-left: 200px;
     margin-top: -52px;
@@ -399,6 +399,7 @@ nav ul li a:hover::after {
 
 .contact-left p{
     flex-basis: 35%;
+    margin-top: 20px;
 }
 
 .contact-left p i{
@@ -438,8 +439,9 @@ nav ul li a:hover::after {
 #download-button{
     display: flex;
     justify-content: center;
-    margin-left: 120px;
-    padding: 14px 60px;
+    margin-left: 98px;
+    margin-top: 55px;
+    padding: 14px 61px;
     font-size: 18px;
 }
 
@@ -813,7 +815,6 @@ nav .fa-solid{
     #download-button{
         display: flex;
         justify-content: center;
-        margin-left: 120px;
         padding: 14px 60px;
         font-size: 18px;
     }
