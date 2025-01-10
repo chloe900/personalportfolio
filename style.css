@@ -44,7 +44,7 @@ nav{
 nav ul li{
     display: inline-block;
     list-style: none;
-    margin: 10px 20px;
+    margin: 30px 20px;
 
 }
 
@@ -148,6 +148,7 @@ nav ul li a:hover::after {
     font-size: 60px;
     font-weight: 600;
     color: white;
+    text-shadow: 8px 8px 18px palevioletred;
 }
 
 .sub-title{
@@ -238,7 +239,8 @@ nav ul li a:hover::after {
     opacity: 0;
     transform: translateY(100px);
     /*transition: background 2.5s, transform 3.5s;*/
-    transition: opacity 2.5s, transform 3.5s cubic-bezier(0.23, 1, 0.32, 1)
+    transition: opacity 2.5s, transform 3.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 8px 8px palevioletred;
 }
 
 .services-list div.show {

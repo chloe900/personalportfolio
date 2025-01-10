@@ -93,23 +93,10 @@ function closemenu(){
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById("msg")
 
-/*form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {msg.innerHTML = "Message Sent!"
-setTimeout(function(){
-    msg.innerHTML = ""
-}, 1000)
-form.reset()
-})
-    .catch(error => console.error('Error!', error.message))
-})*/
-
 form.addEventListener("submit", (event) => {
     const contactForm = event.target
     if (!validateContactForm(contactForm)) {
       event.preventDefault();
-      //displayError(contactForm, 'Invalid input')
     }
   });
 
@@ -140,13 +127,4 @@ function validateContactForm(contactForm) {
     return true;
   }
 
-/*function displayError(formElement, message) {
-    const errorElement = formElement.getElementsByClassName("form-error")[0];
-    
-    // Set the innerHTML of the error element to the provided error message
-    errorElement.innerHTML = message;
-    
-    // Change the display style of the error element to "block" to make it visible
-    errorElement.style.display = "block";
-  }*/
     
