@@ -215,23 +215,22 @@
         <section class="work-list">
             <article class="contact-left">
                 <h1 class = "sub-title" id = "subtTitle">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i>chloetdube@icloud.com</p>
+                <p><i class="fa-solid fa-paper-plane"></i>chloetdube@gmail.com</p>
                 <br>
                 <!--<p><i class="fa-solid fa-phone"></i>065 858 4908</p>-->
                 <br>
                 <br>
                 <section class="social-icons">
-                    <!--<a href="https://twitter.com/blackchloee" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>-->
                     <a href="https://github.com/chloe900" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/chloe-dube-75a61a257/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </section>
                 <a href="images/Chloe Dube CV.pdf" download class = "btn btn2" target = "_blank" id = "download-button">Download CV</a>
             </article>
             <article class="contact-right">
-                <form name = "submit-to-google-sheet">
-                    <input type="text" name = "Name" placeholder = "Your Name" required>
-                    <input type="email" name = "email" placeholder="Your Email">
-                    <textarea name="Message" rows="2" placeholder="Your Message"></textarea>
+                <form name = "submit-to-google-sheet" method="POST" action = "sendmail.php">
+                    <input type="text" name = "name" placeholder = "Your Name" required>
+                    <input type="email" name = "email" placeholder="Your Email" required>
+                    <textarea name="message" rows="2" placeholder="Your Message"></textarea>
                     <button type = "submit" class = "btn btn2"> Submit</button>
                 </form>
                 

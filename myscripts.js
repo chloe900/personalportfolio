@@ -89,12 +89,11 @@ function openmenu(){
 function closemenu(){
     sidemenu.style.right = "-200px"
 }
-//change to firebase database.
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwnm7X8aPXJ4ctOD_kzFe-YmeJh4ZNzTWTUBixstXRlmUnzYBIgr_BiGjwA9Kc_36TT/exec'
+
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById("msg")
 
-form.addEventListener('submit', e => {
+/*form.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => {msg.innerHTML = "Message Sent!"
@@ -104,4 +103,59 @@ setTimeout(function(){
 form.reset()
 })
     .catch(error => console.error('Error!', error.message))
-})
+})*/
+
+form.addEventListener("submit", (event) => {
+    const contactForm = event.target
+    if (!validateContactForm(contactForm)) {
+      event.preventDefault();
+      //displayError(contactForm, 'Invalid input')
+    }
+  });
+
+
+  function isValidEmail(email) {
+    // Define the JS Regex pattern for a valid email address
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    
+    // Test the email against the pattern and return the result (true or false)
+    return emailRegex.test(email);
+}
+
+
+function validateContactForm(contactForm) {
+    // Get the values entered in the form fields
+    const name = contactForm["name"].value;
+    const email = contactForm["email"].value;
+    const message = contactForm["message"].value;
+  
+    if (!name || !email || !message) {
+      return false;
+    }
+
+    if (!isValidEmail(email)) {
+      return false;
+    }
+  
+    return true;
+  }
+
+/*function displayError(formElement, message) {
+    const errorElement = formElement.getElementsByClassName("form-error")[0];
+    
+    // Set the innerHTML of the error element to the provided error message
+    errorElement.innerHTML = message;
+    
+    // Change the display style of the error element to "block" to make it visible
+    errorElement.style.display = "block";
+  }*/
+
+    fetch('http://127.0.0.1:5500/sendmail.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: 'test@example.com' })
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+    
