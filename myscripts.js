@@ -149,13 +149,4 @@ function validateContactForm(contactForm) {
     // Change the display style of the error element to "block" to make it visible
     errorElement.style.display = "block";
   }*/
-
-    fetch('http://127.0.0.1:5500/sendmail.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: 'test@example.com' })
-    })
-    .then(response => response.text())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
     
